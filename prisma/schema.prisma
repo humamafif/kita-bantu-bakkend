@@ -1,0 +1,59 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Donors {
+  id           Int         @id @default(autoincrement())
+  name         String
+  email        String
+  phone_number String
+  address      String
+  donations    Donations[]
+}
+
+model Programs {
+  id          Int         @id @default(autoincrement())
+  name        String
+  description String
+  goal_amount Float
+  start_date  DateTime
+  donations   Donations[]
+}
+
+model Bank {
+  id           Int            @id @default(autoincrement())
+  name         String
+  Transactions Transactions[]
+}
+
+model Donations {
+  id          Int            @id @default(autoincrement())
+  amount      Float
+  date        DateTime
+  donor_id    Int
+  donor       Donors         @relation(fields: [donor_id], references: [id], onDelete: Cascade)
+  program_id  Int?
+  program     Programs?      @relation(fields: [program_id], references: [id], onDelete: Cascade)
+  transaction Transactions[]
+}
+
+model Transactions {
+  id              Int       @id @default(autoincrement())
+  donation_id     Int
+  bank_id         Int
+  bank            Bank      @relation(fields: [bank_id], references: [id], onDelete: Cascade)
+  transaction_ref String
+  status          String
+  donation        Donations @relation(fields: [donation_id], references: [id], onDelete: Cascade)
+}
