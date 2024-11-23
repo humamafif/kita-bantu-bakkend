@@ -39,7 +39,7 @@ npx prisma migrate dev
 ### **5. Start the server**
 Run the server using:
 ```bash
-npm start
+npm run dev
 ```
 The API will be available at `http://localhost:4040`.
 
