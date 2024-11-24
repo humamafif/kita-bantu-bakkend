@@ -44,3 +44,41 @@ npm run dev
 The API will be available at `http://localhost:4040`.
 
 ---
+
+
+---
+
+## 📚 API Endpoints
+
+### Donor Endpoints
+- **GET** `/`
+- **GET** `/:id`
+- **POST** `/`
+- **PUT** `/:id`
+- **DELETE** `/:id`
+
+### Program Endpoints
+- **GET** `/`
+- **GET** `/:id`
+- **POST** `/`
+- **PUT** `/:id`
+- **DELETE** `/:id`
+
+### Bank Endpoints
+- **GET** `/`
+- **GET** `/:id`
+- **POST** `/`
+- **PUT** `/:id`
+- **DELETE** `/:id`
+
+### Donation Endpoints
+- **GET** `/`
+- **GET** `/:id`
+- **POST** `/`
+- **DELETE** `/:id`
+
+### Transaction Endpoints
+- **GET** `/`
+- **GET** `/:id`
+- **POST** `/`
+- **DELETE** `/:id`
