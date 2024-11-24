@@ -28,6 +28,7 @@ npm install
 Create a `.env` file in the root folder and add the following:
 ```env
 DATABASE_URL="mysql://user:password@localhost:3306/your_database_name"
+PORT = 4040
 ```
 
 ### **4. Run Prisma migrations**
