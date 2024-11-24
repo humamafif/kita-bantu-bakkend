@@ -1,15 +1,12 @@
 const express = require('express');
-
+const bankService = require('./bank.service');
 const asyncHandler = require('../middleware/asyncHandler');
-
-const donorService = require('./donor.service')
 const router = express.Router();
-
 
 router.get('/', asyncHandler(async (req, res, next) => {
     try {
-        const donors = await donorService.getAllDonor();
-        res.status(200).json({ data: donors });
+        const banks = await bankService.getBanks();
+        res.status(200).json({ data: banks });
     } catch (error) {
         next(error);
     }
@@ -17,8 +14,8 @@ router.get('/', asyncHandler(async (req, res, next) => {
 
 router.get('/:id', asyncHandler(async (req, res, next) => {
     try {
-        const donor = await donorService.getDonorById(parseInt(req.params.id));
-        res.status(200).json(donor);
+        const bank = await bankService.getBankById(parseInt(req.params.id));
+        res.status(200).json({ data: bank });
     } catch (error) {
         next(error);
     }
@@ -26,8 +23,8 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
 
 router.post('/', asyncHandler(async (req, res, next) => {
     try {
-        const data = await donorService.postDonor(req.body);
-        res.status(201).json({ message: 'Donor created', status_code: 201, data: data });
+        const data = await bankService.postBank(req.body);
+        res.status(201).json({ message: 'Bank created', status_code: 201, data: data });
     } catch (error) {
         next(error);
     }
@@ -35,8 +32,8 @@ router.post('/', asyncHandler(async (req, res, next) => {
 
 router.put('/:id', asyncHandler(async (req, res, next) => {
     try {
-        const data = await donorService.putDonor(parseInt(req.params.id), req.body);
-        res.status(200).json({ message: 'Donor updated', status_code: 200, data: data });
+        const data = await bankService.putBank(parseInt(req.params.id), req.body);
+        res.status(200).json({ message: 'Bank updated', status_code: 200, data: data });
     } catch (error) {
         next(error);
     }
@@ -44,8 +41,8 @@ router.put('/:id', asyncHandler(async (req, res, next) => {
 
 router.delete('/:id', asyncHandler(async (req, res, next) => {
     try {
-        await donorService.deleteDonor(parseInt(req.params.id));
-        res.status(200).json({ message: 'Donor deleted', status_code: 200 });
+        await bankService.deleteBank(parseInt(req.params.id));
+        res.status(201).json({ message: 'Bank deleted', status_code: 201 });
     } catch (error) {
         next(error);
     }

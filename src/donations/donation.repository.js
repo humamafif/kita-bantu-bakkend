@@ -1,7 +1,7 @@
 const prisma = require('../db');
 
 const findDonations = async () => {
-    return prisma.donations.findMany({
+    return await prisma.donations.findMany({
         include: {
             donor: true,
             program: true,
@@ -10,13 +10,13 @@ const findDonations = async () => {
 };
 
 const createDonation = async (data) => {
-    return prisma.donations.create({
+    return await prisma.donations.create({
         data,
     });
 };
 
 const findDonationById = async (id) => {
-    return prisma.donations.findUnique({
+    return await prisma.donations.findUnique({
         where: { id },
         include: {
             donor: true,
@@ -26,7 +26,7 @@ const findDonationById = async (id) => {
 };
 
 const deleteDonation = async (id) => {
-    return prisma.donations.delete({
+    await prisma.donations.delete({
         where: { id },
     });
 };

@@ -24,13 +24,18 @@ const donationController = require('./donations/donation.controller');
 
 app.use('/donations', donationController);
 
+const bankController = require('./banks/bank.controller');
+app.use('/banks', bankController);
+
+const programController = require("./programs/program.controller")
+app.use("/programs", programController);
 
 
 // ERROR HANDLING
 app.use((err, req, res, next) => {
     let statusCode = 500;
     let message = "Internal Server Error";
-    if (err.message === "Donor not found" || err.message === "Donation not found") {
+    if (err.message === "Donor not found" || err.message === "Donation not found" || err.message === "Bank not found" || err.message === "Program not found") {
         statusCode = 404;
         message = err.message;
     } else if (err.message === "Invalid ID") {

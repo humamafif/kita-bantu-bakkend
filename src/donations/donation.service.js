@@ -16,16 +16,16 @@ const getDonationById = async (id) => {
     return donation;
 }
 
-const addDonation = async (donation) => {
+const postDonation = async (donation) => {
     const newDonation = await donationRepository.createDonation(donation);
     return newDonation;
 }
 
 const deleteDonation = async (id) => {
-    getDonationById(id);
-    donationRepository.deleteDonation(id);
+    await getDonationById(id);
+    await donationRepository.deleteDonation(id);
 }
 
 module.exports = {
-    getDonations, getDonationById, addDonation, deleteDonation,
+    getDonations, getDonationById, postDonation, deleteDonation,
 };

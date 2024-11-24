@@ -44,12 +44,11 @@ const updateDonor = async (id, donor) => {
 }
 
 const deleteDonor = async (id) => {
-    const deletedDonor = await prisma.donors.delete({
+    await prisma.donors.delete({
         where: {
             id: id
         }
     });
-    return deletedDonor;
 }
 
 module.exports = { findDonors, findDonorById, createDonor, updateDonor, deleteDonor };

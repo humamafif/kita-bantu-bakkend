@@ -26,7 +26,7 @@ router.get('/:id', asyncHandler(async (req, res, next) => {
 
 router.post('/', asyncHandler(async (req, res, next) => {
     try {
-        const data = await donationService.addDonation(req.body);
+        const data = await donationService.postDonation(req.body);
         res.status(201).json({ message: 'Donor created', status_code: 201, data: data });
     } catch (error) {
         next(error);
