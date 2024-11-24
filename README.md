@@ -1,6 +1,6 @@
 # donasiin-backend-expressjs
 
-Donasi-API is a simple RESTful API built using **Node.js**, **Express.js**, and **Prisma** to manage a donation system. This API supports CRUD operations for donors, donations, programs and banks.
+Donasi-API is a simple RESTful API built using **Node.js**, **Express.js**, and **Prisma** to manage a donation system. This API supports CRUD operations for donors, donations, programs, banks and transactions.
 
 ---
 
