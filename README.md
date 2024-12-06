@@ -52,34 +52,34 @@ The API will be available at `http://localhost:4040`.
 ## 📚 API Endpoints
 
 ### Donor Endpoints
-- **GET** `/`
-- **GET** `/:id`
-- **POST** `/`
-- **PUT** `/:id`
-- **DELETE** `/:id`
+- **GET** `/donors`
+- **GET** `/donors/:id`
+- **POST** `/donors`
+- **PUT** `/donors/:id`
+- **DELETE** `/donors/:id`
 
 ### Program Endpoints
-- **GET** `/`
-- **GET** `/:id`
-- **POST** `/`
-- **PUT** `/:id`
-- **DELETE** `/:id`
+- **GET** `/programs`
+- **GET** `/programs/:id`
+- **POST** `/programs`
+- **PUT** `/programs/:id`
+- **DELETE** `/programs/:id`
 
 ### Bank Endpoints
-- **GET** `/`
-- **GET** `/:id`
-- **POST** `/`
-- **PUT** `/:id`
-- **DELETE** `/:id`
+- **GET** `/banks`
+- **GET** `/banks/:id`
+- **POST** `/banks`
+- **PUT** `/banks/:id`
+- **DELETE** `/banks/:id`
 
 ### Donation Endpoints
-- **GET** `/`
-- **GET** `/:id`
-- **POST** `/`
-- **DELETE** `/:id`
+- **GET** `/donations`
+- **GET** `/donations/:id`
+- **POST** `/donations`
+- **DELETE** `/donations/:id`
 
 ### Transaction Endpoints
-- **GET** `/`
-- **GET** `/:id`
-- **POST** `/`
-- **DELETE** `/:id`
+- **GET** `/transactions`
+- **GET** `/transactions:id`
+- **POST** `/transactions`
+- **DELETE** `/transactions/:id`
