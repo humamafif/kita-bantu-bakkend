@@ -72,6 +72,50 @@ The API will be available at `http://localhost:4040`.
 - **PUT** `/banks/:id`
 - **DELETE** `/banks/:id`
 
+POST
+/banks
+request body:
+{
+    "name": "nama bank"
+}
+response:
+{
+    "message": "Bank created",
+    "status_code": 201,
+    "data": {
+        "id": 11,
+        "name": "nama bank"
+    }
+}
+
+PUT
+/banks/:id
+request body:
+{
+    "name": "nama bank"
+}
+response body:
+{
+    "message": "Bank updated",
+    "status_code": 200,
+    "data": {
+        "id": 11,
+        "name": "bank"
+    }
+}
+
+Delete
+/banks/:id
+
+{
+    "message": "Bank deleted",
+    "status_code": 201
+}
+
+GET
+/banks
+/banks/:id
+
 ### Donation Endpoints
 - **GET** `/donations`
 - **GET** `/donations/:id`
